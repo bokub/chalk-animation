@@ -1,0 +1,24 @@
+{
+  "name": "chalk-animation",
+  "description": "TODO",
+  "version": "0.0.1",
+  "author": "Boris K",
+  "bugs": "TODO",
+  "dependencies": {
+    "gradient-string": "^0.1.1"
+  },
+  "devDependencies": {
+    "xo": "^0.18.2"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "homepage": "TODO",
+  "keywords": [],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": "TODO",
+  "scripts": {
+    "test": "xo"
+  }
+}
