@@ -1,24 +1,44 @@
 {
   "name": "chalk-animation",
-  "description": "TODO",
-  "version": "0.0.1",
+  "description": "Colorful animations in terminal stdout",
+  "version": "0.1.0",
   "author": "Boris K",
-  "bugs": "TODO",
+  "bugs": "https://github.com/bokub/chalk-animation/issues",
   "dependencies": {
     "gradient-string": "^0.1.1"
   },
   "devDependencies": {
+    "ava": "^0.21.0",
     "xo": "^0.18.2"
   },
   "engines": {
     "node": ">=4"
   },
-  "homepage": "TODO",
-  "keywords": [],
+  "homepage": "https://github.com/bokub/chalk-animation",
+  "keywords": [
+    "animation",
+    "chalk",
+    "cli",
+    "color",
+    "colors",
+    "colour",
+    "command-line",
+    "console",
+    "formatting",
+    "gradient",
+    "log",
+    "logging",
+    "rainbow",
+    "shell",
+    "string",
+    "style",
+    "styles",
+    "terminal"
+  ],
   "license": "MIT",
   "main": "index.js",
-  "repository": "TODO",
+  "repository": "bokub/chalk-animation",
   "scripts": {
-    "test": "xo"
+    "test": "xo && ava"
   }
 }

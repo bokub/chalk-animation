@@ -3,10 +3,10 @@
 const gradient = require('gradient-string');
 
 const log = console.log;
-const gradientOptions = {interpolation: 'hsv', hsvSpin: 'long'};
+const longHsv = {interpolation: 'hsv', hsvSpin: 'long'};
 let currentAnimation = null;
 
-const funcs = {
+const consoleFunctions = {
 	log: console.log.bind(console),
 	info: console.info.bind(console),
 	warn: console.warn.bind(console),
@@ -14,10 +14,10 @@ const funcs = {
 };
 
 // eslint-disable-next-line guard-for-in
-for (const k in funcs) {
+for (const k in consoleFunctions) {
 	console[k] = function () {
 		stopLastAnimation();
-		funcs[k].apply(console, arguments);
+		consoleFunctions[k].apply(console, arguments);
 	};
 }
 
@@ -26,12 +26,18 @@ const effects = {
 		const hue = 5 * frame;
 		const leftColor = {h: hue % 360, s: 1, v: 1};
 		const rightColor = {h: (hue + 1) % 360, s: 1, v: 1};
-		return gradient(leftColor, rightColor)(str, gradientOptions);
+		return gradient(leftColor, rightColor)(str, longHsv);
 	}
 };
 
-function animateString(str, effect, delay) {
+function animateString(str, effect, delay, speed) {
 	stopLastAnimation();
+
+	speed = speed === undefined ? 1 : parseFloat(speed);
+	if (!speed || speed <= 0) {
+		throw new Error(`Expected \`speed\` to be an number greater than 0`);
+	}
+
 	currentAnimation = {
 		stopped: false,
 		frame: 0,
@@ -43,7 +49,7 @@ function animateString(str, effect, delay) {
 				if (!self.stopped) {
 					self.nextStep();
 				}
-			}, delay);
+			}, delay / speed);
 		},
 		stop() {
 			this.stopped = true;
@@ -65,4 +71,4 @@ function stopLastAnimation() {
 	}
 }
 
-module.exports.rainbow = str => animateString(str, effects.rainbow, 15);
+module.exports.rainbow = (str, speed) => animateString(str, effects.rainbow, 15, speed);

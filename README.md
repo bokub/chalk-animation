@@ -1,6 +1,8 @@
 # chalk-animation
 
-> Work in progress ⏳
+[![Build Status](https://travis-ci.org/bokub/chalk-animation.svg?branch=master)](https://travis-ci.org/bokub/chalk-animation)
+[![npm](https://img.shields.io/npm/v/chalk-animation.svg)](https://www.npmjs.com/package/chalk-animation)
+[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 
 
 ## Install
@@ -15,20 +17,20 @@ $ npm install --save chalk-animation
 ```javascript
 const chalkAnimation = require('chalk-animation');
 
-chalkAnimation.rainbow('Lorem ipsum dolor sit amet, consectetur adipiscing elit');
+chalkAnimation.rainbow('Lorem ipsum dolor sit amet');
 ```
 
 You can stop and restart an animation
 
 ```javascript
-const animation = chalkAnimation.rainbow('Lorem ipsum dolor sit amet, consectetur adipiscing elit');
+const rainbow = chalkAnimation.rainbow('Lorem ipsum'); // Animation starts
 
 setTimeout(() => {
-	animation.stop();
+    rainbow.stop(); // Animation stops
 }, 1000);
 
 setTimeout(() => {
-	animation.start();
+    rainbow.start(); // Animation resumes
 }, 2000);
 
 ```
@@ -38,8 +40,15 @@ Anything printed to the console will stop the previous animation automatically
 ```javascript
 chalkAnimation.rainbow('Lorem ipsum');
 setTimeout(() => {
-	console.log('dolor sit amet');
+    // Stop the 'Lorem ipsum' animation, then write on a new line.
+    console.log('dolor sit amet');
 }, 1000);
+```
+
+Change the animation speed using a second parameter. Should be greater than 0, default is 1.
+
+```javascript
+chalkAnimation.rainbow('Lorem ipsum dolor sit amet', 2); // Two times faster than default
 ```
 
 ## Dependencies
