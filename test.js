@@ -8,4 +8,5 @@ test('throw error if invalid speed', t => {
 
 test('works fine', t => {
 	t.notThrows(() => a.rainbow('Lorem ipsum dolor sit amet'));
+	t.notThrows(() => a.pulse('Lorem ipsum dolor sit amet'));
 });

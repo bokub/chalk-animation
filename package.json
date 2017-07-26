@@ -1,10 +1,11 @@
 {
   "name": "chalk-animation",
   "description": "Colorful animations in terminal stdout",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Boris K",
   "bugs": "https://github.com/bokub/chalk-animation/issues",
   "dependencies": {
+    "chalk": "^2.0.1",
     "gradient-string": "^0.1.1"
   },
   "devDependencies": {

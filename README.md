@@ -48,8 +48,14 @@ setTimeout(() => {
 Change the animation speed using a second parameter. Should be greater than 0, default is 1.
 
 ```javascript
-chalkAnimation.rainbow('Lorem ipsum dolor sit amet', 2); // Two times faster than default
+chalkAnimation.rainbow('Lorem ipsum', 2); // Two times faster than default
 ```
+
+## Available animations
+- `rainbow` - Rainbow moving from left to right
+- `pulse` - String blinks like a heartbeat
+
+More to come soon!
 
 ## Dependencies
 

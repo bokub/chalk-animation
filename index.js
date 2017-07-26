@@ -1,5 +1,5 @@
 'use strict';
-
+const chalk = require('chalk');
 const gradient = require('gradient-string');
 
 const log = console.log;
@@ -27,6 +27,9 @@ const effects = {
 		const leftColor = {h: hue % 360, s: 1, v: 1};
 		const rightColor = {h: (hue + 1) % 360, s: 1, v: 1};
 		return gradient(leftColor, rightColor)(str, longHsv);
+	},
+	pulse(str, frame) {
+		return frame % 5 === 4 ? chalk.bold.red(str) : str;
 	}
 };
 
@@ -72,3 +75,4 @@ function stopLastAnimation() {
 }
 
 module.exports.rainbow = (str, speed) => animateString(str, effects.rainbow, 15, speed);
+module.exports.pulse = (str, speed) => animateString(str, effects.pulse, 200, speed); // TODO Be able to choose the color?
