@@ -4,6 +4,8 @@
 [![npm](https://img.shields.io/npm/v/chalk-animation.svg)](https://www.npmjs.com/package/chalk-animation)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 
+> Colorful animations in terminal stdout
+
 
 ## Install
 
@@ -51,11 +53,13 @@ Change the animation speed using a second parameter. Should be greater than 0, d
 chalkAnimation.rainbow('Lorem ipsum', 2); // Two times faster than default
 ```
 
+
 ## Available animations
 - `rainbow` - Rainbow moving from left to right
 - `pulse` - String blinks like a heartbeat
 
 More to come soon!
+
 
 ## Dependencies
 
