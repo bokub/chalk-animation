@@ -4,6 +4,7 @@
   "version": "0.2.0",
   "author": "Boris K",
   "bugs": "https://github.com/bokub/chalk-animation/issues",
+  "bin": "./cli.js",
   "dependencies": {
     "chalk": "^2.0.1",
     "gradient-string": "^0.1.1"
