@@ -55,8 +55,12 @@ chalkAnimation.rainbow('Lorem ipsum', 2); // Two times faster than default
 
 
 ## Available animations
-- `rainbow` - Rainbow moving from left to right
-- `pulse` - String blinks like a heartbeat
+
+- `rainbow`
+- `pulse`
+- `glitch`
+- `radar`
+- `neon`
 
 More to come soon!
 

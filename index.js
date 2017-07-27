@@ -129,7 +129,7 @@ function stopLastAnimation() {
 }
 
 module.exports.rainbow = (str, speed) => animateString(str, effects.rainbow, 15, speed);
-module.exports.pulse = (str, speed) => animateString(str, effects.pulse, 200, speed); // TODO Be able to choose the color?
+module.exports.pulse = (str, speed) => animateString(str, effects.pulse, 200, speed);
 module.exports.glitch = (str, speed) => animateString(str, effects.glitch, 55, speed);
 module.exports.radar = (str, speed) => animateString(str, effects.radar, 50, speed);
 module.exports.neon = (str, speed) => animateString(str, effects.neon, 500, speed);
