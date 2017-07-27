@@ -80,6 +80,10 @@ const effects = {
 		}
 
 		return chars.join('');
+	},
+	neon(str, frame) {
+		const color = (frame % 2 === 0) ? chalk.dim.rgb(88, 80, 85) : chalk.bold.rgb(213, 70, 242);
+		return color(str);
 	}
 };
 
@@ -128,3 +132,4 @@ module.exports.rainbow = (str, speed) => animateString(str, effects.rainbow, 15,
 module.exports.pulse = (str, speed) => animateString(str, effects.pulse, 200, speed); // TODO Be able to choose the color?
 module.exports.glitch = (str, speed) => animateString(str, effects.glitch, 55, speed);
 module.exports.radar = (str, speed) => animateString(str, effects.radar, 50, speed);
+module.exports.neon = (str, speed) => animateString(str, effects.neon, 500, speed);
