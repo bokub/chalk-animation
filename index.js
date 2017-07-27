@@ -61,6 +61,25 @@ const effects = {
 		}
 
 		return result;
+	},
+	radar(str, frame) {
+		const depth = Math.floor(Math.min(str.length, str.length * 0.2));
+		const step = Math.floor(255 / depth);
+
+		const globalPos = frame % (str.length + depth);
+
+		const chars = [];
+		for (let i = 0, length = str.length; i < length; i++) {
+			const pos = -(i - globalPos);
+			if (pos > 0 && pos <= depth - 1) {
+				const shade = (depth - pos) * step;
+				chars.push(chalk.rgb(shade, shade, shade)(str[i]));
+			} else {
+				chars.push(' ');
+			}
+		}
+
+		return chars.join('');
 	}
 };
 
@@ -108,3 +127,4 @@ function stopLastAnimation() {
 module.exports.rainbow = (str, speed) => animateString(str, effects.rainbow, 15, speed);
 module.exports.pulse = (str, speed) => animateString(str, effects.pulse, 200, speed); // TODO Be able to choose the color?
 module.exports.glitch = (str, speed) => animateString(str, effects.glitch, 55, speed);
+module.exports.radar = (str, speed) => animateString(str, effects.radar, 50, speed);
