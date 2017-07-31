@@ -8,6 +8,17 @@
 > Colorful animations in terminal stdout
 
 
+## Available animations
+
+|   Name    |                   Preview                  |
+|:---------:|:------------------------------------------:|
+|  rainbow  | ![rainbow](http://i.imgur.com/napdxdn.gif) |
+|   pulse   | ![rainbow](http://i.imgur.com/xdaETwr.gif) |
+|   glitch  | ![rainbow](http://i.imgur.com/834FJU1.gif) |
+|   radar   | ![rainbow](http://i.imgur.com/3bFrtRc.gif) |
+|    neon   | ![rainbow](http://i.imgur.com/YdAAroI.gif) |
+
+
 ## Install
 
 ```
@@ -53,17 +64,6 @@ Change the animation speed using a second parameter. Should be greater than 0, d
 ```javascript
 chalkAnimation.rainbow('Lorem ipsum', 2); // Two times faster than default
 ```
-
-
-## Available animations
-
-| Animation |                   Preview                  |
-|:---------:|:------------------------------------------:|
-|  rainbow  | ![rainbow](http://i.imgur.com/KStTcyl.gif) |
-|   pulse   | ![rainbow](http://i.imgur.com/W0sdUlM.gif) |
-|   glitch  | ![rainbow](http://i.imgur.com/WdyMd8v.gif) |
-|   radar   | ![rainbow](http://i.imgur.com/1OxDrZB.gif) |
-|    neon   | ![rainbow](http://i.imgur.com/DRyZN4N.gif) |
 
 
 ## Dependencies
