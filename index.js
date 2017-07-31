@@ -3,7 +3,6 @@ const chalk = require('chalk');
 const gradient = require('gradient-string');
 
 const log = console.log;
-const longHsv = {interpolation: 'hsv', hsvSpin: 'long'};
 let currentAnimation = null;
 
 const consoleFunctions = {
@@ -22,6 +21,7 @@ for (const k in consoleFunctions) {
 }
 
 const glitchChars = 'x*0987654321[]0-~@#(____!!!!\\|?????....0000\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t';
+const longHsv = {interpolation: 'hsv', hsvSpin: 'long'};
 
 const effects = {
 	rainbow(str, frame) {
@@ -31,7 +31,35 @@ const effects = {
 		return gradient(leftColor, rightColor)(str, longHsv);
 	},
 	pulse(str, frame) {
-		return frame % 5 === 4 ? chalk.bold.red(str) : str;
+		frame = (frame % 120) + 1;
+		const transition = 6;
+		const duration = 10;
+		const on = '#ff1010';
+		const off = '#e6e6e6';
+
+		if (frame >= (2 * transition) + duration) {
+			return chalk.hex(off)(str); // All white
+		}
+		if (frame >= transition && frame <= transition + duration) {
+			return chalk.hex(on)(str); // All red
+		}
+
+		frame = frame >= transition + duration ? (2 * transition) + duration - frame : frame; // Revert animation
+
+		const g = frame <= transition / 2 ?
+			gradient([
+				{color: off, pos: 0.5 - (frame / transition)},
+				{color: on, pos: 0.5},
+				{color: off, pos: 0.5 + (frame / transition)}
+			]) :
+			gradient([
+				{color: off, pos: 0},
+				{color: on, pos: 1 - (frame / transition)},
+				{color: on, pos: frame / transition},
+				{color: off, pos: 1}
+			]);
+
+		return g(str);
 	},
 	glitch(str, frame) {
 		if ((frame % 2) + (frame % 3) + (frame % 11) + (frame % 29) + (frame % 37) > 52) {
@@ -129,7 +157,7 @@ function stopLastAnimation() {
 }
 
 module.exports.rainbow = (str, speed) => animateString(str, effects.rainbow, 15, speed);
-module.exports.pulse = (str, speed) => animateString(str, effects.pulse, 200, speed);
+module.exports.pulse = (str, speed) => animateString(str, effects.pulse, 16, speed);
 module.exports.glitch = (str, speed) => animateString(str, effects.glitch, 55, speed);
 module.exports.radar = (str, speed) => animateString(str, effects.radar, 50, speed);
 module.exports.neon = (str, speed) => animateString(str, effects.neon, 500, speed);
