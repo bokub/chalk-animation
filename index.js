@@ -145,7 +145,7 @@ function animateString(str, effect, delay, speed) {
 		}
 	};
 
-	console.log('');
+	log('');
 	currentAnimation.start();
 	return currentAnimation;
 }
