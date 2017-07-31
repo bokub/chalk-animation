@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/bokub/chalk-animation.svg?branch=master)](https://travis-ci.org/bokub/chalk-animation)
 [![npm](https://img.shields.io/npm/v/chalk-animation.svg)](https://www.npmjs.com/package/chalk-animation)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
+[![Code Climate](https://img.shields.io/codeclimate/github/bokub/chalk-animation.svg)](https://codeclimate.com/github/bokub/chalk-animation)
 
 > Colorful animations in terminal stdout
 
@@ -56,13 +57,13 @@ chalkAnimation.rainbow('Lorem ipsum', 2); // Two times faster than default
 
 ## Available animations
 
-- `rainbow`
-- `pulse`
-- `glitch`
-- `radar`
-- `neon`
-
-More to come soon!
+| Animation |                   Preview                  |
+|:---------:|:------------------------------------------:|
+|  rainbow  | ![rainbow](http://i.imgur.com/KStTcyl.gif) |
+|   pulse   | ![rainbow](http://i.imgur.com/W0sdUlM.gif) |
+|   glitch  | ![rainbow](http://i.imgur.com/WdyMd8v.gif) |
+|   radar   | ![rainbow](http://i.imgur.com/1OxDrZB.gif) |
+|    neon   | ![rainbow](http://i.imgur.com/DRyZN4N.gif) |
 
 
 ## Dependencies
