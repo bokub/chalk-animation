@@ -21,7 +21,7 @@
 
 ## Install
 
-```
+```bash
 $ npm install --save chalk-animation
 ```
 
@@ -66,7 +66,31 @@ chalkAnimation.rainbow('Lorem ipsum', 2); // Two times faster than default
 ```
 
 
-## Dependencies
+## CLI mode
+
+```bash
+# Install package globally
+$ npm install --global chalk-animation
+```
+
+```
+$ chalk-animation --help
+
+Usage
+  $ chalk-animation <name> [text...]
+
+Available animations
+  rainbow
+  pulse
+  glitch
+  radar
+  neon
+
+Example
+  $ chalk-animation rainbow Hello world!
+```
+
+## Related
 
 - [gradient-string](https://github.com/bokub/gradient-string) - Output gradients to terminal
 - [chalk](https://github.com/chalk/chalk) - Output colored text to terminal
