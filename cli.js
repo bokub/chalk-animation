@@ -3,7 +3,9 @@ const chalkAnim = require('.');
 
 if (process.argv.length < 4) {
 	console.error('Usage\n  $ chalk-animation <name> [text...]');
-	console.error('\nAvailable animations\n  ' + Object.keys(chalkAnim).join('\n  '));
+	console.error(
+		'\nAvailable animations\n  ' + Object.keys(chalkAnim).join('\n  ')
+	);
 	console.error('\nExample\n  $ chalk-animation rainbow Hello world!');
 	process.exit(2);
 }

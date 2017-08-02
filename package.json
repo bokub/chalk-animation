@@ -11,7 +11,9 @@
   },
   "devDependencies": {
     "ava": "^0.21.0",
-    "xo": "^0.18.2"
+    "husky": "^0.14.3",
+    "lint-staged": "^4.0.2",
+    "prettier": "^1.5.3"
   },
   "engines": {
     "node": ">=4"
@@ -41,6 +43,7 @@
   "main": "index.js",
   "repository": "bokub/chalk-animation",
   "scripts": {
-    "test": "xo && ava"
+    "precommit": "lint-staged",
+    "test": "ava"
   }
 }
