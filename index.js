@@ -124,17 +124,21 @@ function animateString(str, effect, delay, speed) {
 	}
 
 	currentAnimation = {
+		text: str,
 		stopped: false,
 		frame: 0,
 		nextStep() {
 			const self = this;
-			log('\u001B[1F\u001B[G\u001B[2K' + effect(str, this.frame));
+			log('\u001B[1F\u001B[G\u001B[2K' + effect(this.text, this.frame));
 			setTimeout(() => {
 				self.frame++;
 				if (!self.stopped) {
 					self.nextStep();
 				}
 			}, delay / speed);
+		},
+		replace(str) {
+			this.text = str;
 		},
 		stop() {
 			this.stopped = true;
