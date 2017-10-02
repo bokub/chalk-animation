@@ -126,31 +126,42 @@ function animateString(str, effect, delay, speed) {
 	currentAnimation = {
 		text: str,
 		stopped: false,
-		frame: 0,
-		nextStep() {
+		init: false,
+		f: 0,
+		render() {
 			const self = this;
-			log('\u001B[1F\u001B[G\u001B[2K' + effect(this.text, this.frame));
+			if (!this.init) {
+				log('');
+				this.init = true;
+			}
+			log(this.frame());
 			setTimeout(() => {
-				self.frame++;
 				if (!self.stopped) {
-					self.nextStep();
+					self.render();
 				}
 			}, delay / speed);
+		},
+		frame() {
+			return '\u001B[1F\u001B[G\u001B[2K' + effect(this.text, this.f++);
 		},
 		replace(str) {
 			this.text = str;
 		},
 		stop() {
 			this.stopped = true;
+			return this;
 		},
 		start() {
 			this.stopped = false;
-			this.nextStep();
+			this.render();
+			return this;
 		}
 	};
-
-	log('');
-	currentAnimation.start();
+	setTimeout(() => {
+		if (!currentAnimation.stopped) {
+			currentAnimation.start();
+		}
+	}, delay / speed);
 	return currentAnimation;
 }
 
