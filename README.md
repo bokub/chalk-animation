@@ -5,7 +5,7 @@
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 [![Code Climate](https://img.shields.io/codeclimate/github/bokub/chalk-animation.svg)](https://codeclimate.com/github/bokub/chalk-animation)
 
-> Colorful animations in terminal stdout
+> Colorful animations in terminal output
 
 
 ## Available animations
@@ -37,7 +37,7 @@ chalkAnimation.rainbow('Lorem ipsum dolor sit amet');
 You can stop and restart an animation with `stop()` and `start()`
 
 ```javascript
-const rainbow = chalkAnimation.rainbow('Lorem ipsum'); // Animation starts
+const rainbow = chalkAnimation.rainbow('Lorem ipsum'); // Animation starts automatically
 
 setTimeout(() => {
     rainbow.stop(); // Animation stops
@@ -73,10 +73,21 @@ const rainbow = chalkAnimation.rainbow(str);
 
 // Add a new dot every second
 setInterval(() => {
-	str += '.';
-	rainbow.replace(str);
+	rainbow.replace(str += '.');
 }, 1000);
 ```
+
+Manually render frames with `render()`, or get the content of the frame with `frame()`
+
+```javascript
+const rainbow = chalkAnimation.rainbow('Lorem ipsum').stop(); // Don't start the animation
+
+rainbow.render(); // Display the first frame
+
+const frame = rainbow.frame(); // Get the second frame
+console.log(frame);
+```
+
 
 ## CLI mode
 
@@ -101,6 +112,7 @@ Available animations
 Example
   $ chalk-animation rainbow Hello world!
 ```
+
 
 ## Related
 
