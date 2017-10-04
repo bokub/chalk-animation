@@ -34,10 +34,14 @@ const chalkAnimation = require('chalk-animation');
 chalkAnimation.rainbow('Lorem ipsum dolor sit amet');
 ```
 
-You can stop and restart an animation with `stop()` and `start()`
+#### Start and stop
+
+You can stop and resume an animation with `stop()` and `start()`.
+
+When created, the instance of chalkAnimation **starts automatically**.
 
 ```javascript
-const rainbow = chalkAnimation.rainbow('Lorem ipsum'); // Animation starts automatically
+const rainbow = chalkAnimation.rainbow('Lorem ipsum'); // Animation starts
 
 setTimeout(() => {
     rainbow.stop(); // Animation stops
@@ -49,6 +53,8 @@ setTimeout(() => {
 
 ```
 
+#### Automatic stop
+
 Anything printed to the console will stop the previous animation automatically
 
 ```javascript
@@ -59,11 +65,15 @@ setTimeout(() => {
 }, 1000);
 ```
 
+#### Changing speed
+
 Change the animation speed using a second parameter. Should be greater than 0, default is 1.
 
 ```javascript
 chalkAnimation.rainbow('Lorem ipsum', 2); // Two times faster than default
 ```
+
+#### Changing text
 
 Change the animated text seamlessly with `replace()`
 
@@ -77,7 +87,9 @@ setInterval(() => {
 }, 1000);
 ```
 
-Manually render frames with `render()`, or get the content of the frame with `frame()`
+#### Manual rendering
+
+Manually render frames with `render()`, or get the content of the next frame with `frame()`
 
 ```javascript
 const rainbow = chalkAnimation.rainbow('Lorem ipsum').stop(); // Don't start the animation
