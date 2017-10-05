@@ -1,4 +1,5 @@
 'use strict';
+
 const chalk = require('chalk');
 const gradient = require('gradient-string');
 
@@ -6,7 +7,7 @@ const log = console.log;
 let currentAnimation = null;
 
 const consoleFunctions = {
-	log: console.log.bind(console),
+	log: log.bind(console),
 	info: console.info.bind(console),
 	warn: console.warn.bind(console),
 	error: console.error.bind(console)
@@ -68,6 +69,7 @@ const effects = {
 
 		const chunkSize = Math.max(3, Math.round(str.length * 0.02));
 		const chunks = [];
+
 		for (let i = 0, length = str.length; i < length; i++) {
 			const skip = Math.round(Math.max(0, (Math.random() - 0.8) * chunkSize));
 			chunks.push(str.substring(i, i + skip).replace(/[^\r\n]/g, ' '));
@@ -171,8 +173,10 @@ function stopLastAnimation() {
 	}
 }
 
-module.exports.rainbow = (str, speed) => animateString(str, effects.rainbow, 15, speed);
-module.exports.pulse = (str, speed) => animateString(str, effects.pulse, 16, speed);
-module.exports.glitch = (str, speed) => animateString(str, effects.glitch, 55, speed);
-module.exports.radar = (str, speed) => animateString(str, effects.radar, 50, speed);
-module.exports.neon = (str, speed) => animateString(str, effects.neon, 500, speed);
+module.exports = {
+	rainbow: (str, speed) => animateString(str, effects.rainbow, 15, speed),
+	pulse: (str, speed) => animateString(str, effects.pulse, 16, speed),
+	glitch: (str, speed) => animateString(str, effects.glitch, 55, speed),
+	radar: (str, speed) => animateString(str, effects.radar, 50, speed),
+	neon: (str, speed) => animateString(str, effects.neon, 500, speed)
+};

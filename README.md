@@ -22,7 +22,7 @@
 ## Install
 
 ```bash
-$ npm install --save chalk-animation
+$ npm i chalk-animation
 ```
 
 
