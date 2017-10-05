@@ -84,19 +84,17 @@ const effects = {
 		}
 
 		let result = chunks.join('');
-		const mr = Math.random();
-		if (mr > 0.99) {
+		if (Math.random() > 0.99) {
 			result = result.toUpperCase();
-		} else if (mr < 0.01) {
+		} else if (Math.random() < 0.01) {
 			result = result.toLowerCase();
 		}
 
 		return result;
 	},
 	radar(str, frame) {
-		const mf = Math.floor;
-		const depth = mf(Math.min(str.length, str.length * 0.2));
-		const step = mf(255 / depth);
+		const depth = Math.floor(Math.min(str.length, str.length * 0.2));
+		const step = Math.floor(255 / depth);
 
 		const globalPos = frame % (str.length + depth);
 
