@@ -117,6 +117,7 @@ $ node cli.js --help
     $ chalk-animation <name> [options] [text...]
 
   Options
+		--duration  Duration of the animation in ms, defaults to Infinity
     --speed  Animation speed as number > 0, defaults to 1
 
   Available animations

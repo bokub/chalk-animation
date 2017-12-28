@@ -9,7 +9,8 @@ Usage
   $ chalk-animation <name> [options] [text...]
 
 Options
-  --speed  Animation speed as number > 0, defaults to 1
+  --duration  Duration of the animation in ms, defaults to Infinity
+	--speed     Animation speed as number > 0, defaults to 1
 
 Available animations
   ${names.join('\n  ')}
@@ -31,4 +32,10 @@ if (typeof effect === 'undefined') {
 	process.exit(1);
 }
 
-effect(payload.join(' '), cli.flags.speed);
+const animation = effect(payload.join(' '), cli.flags.speed);
+
+if (typeof cli.flags.duration === 'number') {
+	setTimeout(() => {
+		animation.stop();
+	}, cli.flags.duration);
+}
