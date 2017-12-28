@@ -13,11 +13,11 @@
 
 |   Name    |                   Preview                  |
 |:---------:|:------------------------------------------:|
-|  rainbow  | ![rainbow](http://i.imgur.com/napdxdn.gif) |
-|   pulse   | ![rainbow](http://i.imgur.com/xdaETwr.gif) |
-|   glitch  | ![rainbow](http://i.imgur.com/834FJU1.gif) |
-|   radar   | ![rainbow](http://i.imgur.com/3bFrtRc.gif) |
-|    neon   | ![rainbow](http://i.imgur.com/YdAAroI.gif) |
+|  rainbow  | ![](https://cdn.rawgit.com/marionebl/0c4a541ba6a9aea5ad59998fcb2d9594/raw/41730c3a107be7b47da34219c3ed2e7e209e1462/rainbow.svg) |
+|   pulse   | ![](https://cdn.rawgit.com/marionebl/0c4a541ba6a9aea5ad59998fcb2d9594/raw/41730c3a107be7b47da34219c3ed2e7e209e1462/pulse.svg) |
+|   glitch  | ![](https://cdn.rawgit.com/marionebl/0c4a541ba6a9aea5ad59998fcb2d9594/raw/41730c3a107be7b47da34219c3ed2e7e209e1462/glitch.svg) |
+|   radar   | ![](https://cdn.rawgit.com/marionebl/0c4a541ba6a9aea5ad59998fcb2d9594/raw/41730c3a107be7b47da34219c3ed2e7e209e1462/radar.svg) |
+|    neon   | ![](https://cdn.rawgit.com/marionebl/0c4a541ba6a9aea5ad59998fcb2d9594/raw/41730c3a107be7b47da34219c3ed2e7e209e1462/neon.svg) |
 
 
 ## Install
