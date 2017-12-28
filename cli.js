@@ -6,7 +6,10 @@ const names = Object.keys(chalkAnim);
 
 const cli = meow(`
 Usage
-  $ chalk-animation <name> [text...]
+  $ chalk-animation <name> [options] [text...]
+
+Options
+  --speed  Animation speed as number > 0, defaults to 1
 
 Available animations
   ${names.join('\n  ')}
@@ -28,4 +31,4 @@ if (typeof effect === 'undefined') {
 	process.exit(1);
 }
 
-effect(payload.join(' '));
+effect(payload.join(' '), cli.flags.speed);
