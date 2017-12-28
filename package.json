@@ -7,7 +7,8 @@
   "bin": "./cli.js",
   "dependencies": {
     "chalk": "^2.1.0",
-    "gradient-string": "^0.1.2"
+    "gradient-string": "^0.1.2",
+    "meow": "^4.0.0"
   },
   "devDependencies": {
     "ava": "^0.22.0",
