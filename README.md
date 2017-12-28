@@ -109,7 +109,7 @@ $ npm install --global chalk-animation
 ```
 
 ```
-$ node cli.js --help
+$ chalk-animation --help
 
   Colorful animations in terminal output
 
