@@ -111,18 +111,24 @@ $ npm install --global chalk-animation
 ```
 $ chalk-animation --help
 
-Usage
-  $ chalk-animation <name> [text...]
+  Colorful animations in terminal output
 
-Available animations
-  rainbow
-  pulse
-  glitch
-  radar
-  neon
+  Usage
+    $ chalk-animation <name> [options] [text...]
 
-Example
-  $ chalk-animation rainbow Hello world!
+  Options
+		--duration  Duration of the animation in ms, defaults to Infinity
+    --speed  Animation speed as number > 0, defaults to 1
+
+  Available animations
+    rainbow
+    pulse
+    glitch
+    radar
+    neon
+
+  Example
+    $ chalk-animation rainbow Hello world!
 ```
 
 
