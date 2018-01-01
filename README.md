@@ -3,7 +3,8 @@
 [![Build Status](https://travis-ci.org/bokub/chalk-animation.svg?branch=master)](https://travis-ci.org/bokub/chalk-animation)
 [![npm](https://img.shields.io/npm/v/chalk-animation.svg)](https://www.npmjs.com/package/chalk-animation)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
-[![Code Climate](https://img.shields.io/codeclimate/github/bokub/chalk-animation.svg)](https://codeclimate.com/github/bokub/chalk-animation)
+[![Maintainability](https://api.codeclimate.com/v1/badges/0bd482faab1f6b4c94e8/maintainability)](https://codeclimate.com/github/bokub/chalk-animation/maintainability)
+[![npm](https://img.shields.io/npm/dm/chalk-animation.svg)](https://www.npmjs.com/package/chalk-animation)
 
 > Colorful animations in terminal output
 
@@ -117,7 +118,7 @@ $ chalk-animation --help
     $ chalk-animation <name> [options] [text...]
 
   Options
-		--duration  Duration of the animation in ms, defaults to Infinity
+    --duration  Duration of the animation in ms, defaults to Infinity
     --speed  Animation speed as number > 0, defaults to 1
 
   Available animations
