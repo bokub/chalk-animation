@@ -14,7 +14,7 @@
 |   Name    |                   Preview                  |
 |:---------:|:------------------------------------------:|
 |  rainbow  | ![](https://cdn.rawgit.com/marionebl/0c4a541ba6a9aea5ad59998fcb2d9594/raw/41730c3a107be7b47da34219c3ed2e7e209e1462/rainbow.svg) |
-|   pulse   | ![](https://cdn.rawgit.com/marionebl/0c4a541ba6a9aea5ad59998fcb2d9594/raw/41730c3a107be7b47da34219c3ed2e7e209e1462/pulse.svg) |
+|   pulse   | ![](https://cdn.rawgit.com/marionebl/0c4a541ba6a9aea5ad59998fcb2d9594/raw/bfc17f5e7b9224dfb5a69151d2b53287a1dce709/pulse.svg) |
 |   glitch  | ![](https://cdn.rawgit.com/marionebl/0c4a541ba6a9aea5ad59998fcb2d9594/raw/41730c3a107be7b47da34219c3ed2e7e209e1462/glitch.svg) |
 |   radar   | ![](https://cdn.rawgit.com/marionebl/0c4a541ba6a9aea5ad59998fcb2d9594/raw/41730c3a107be7b47da34219c3ed2e7e209e1462/radar.svg) |
 |    neon   | ![](https://cdn.rawgit.com/marionebl/0c4a541ba6a9aea5ad59998fcb2d9594/raw/41730c3a107be7b47da34219c3ed2e7e209e1462/neon.svg) |
