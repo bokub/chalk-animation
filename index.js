@@ -127,13 +127,14 @@ function animateString(str, effect, delay, speed) {
 
 	currentAnimation = {
 		text: str,
+		lines: str.split(/\r\n|\r|\n/).length,
 		stopped: false,
 		init: false,
 		f: 0,
 		render() {
 			const self = this;
 			if (!this.init) {
-				log('');
+				log('\n'.repeat(this.lines - 1));
 				this.init = true;
 			}
 			log(this.frame());
@@ -144,7 +145,7 @@ function animateString(str, effect, delay, speed) {
 			}, delay / speed);
 		},
 		frame() {
-			return '\u001B[1F\u001B[G\u001B[2K' + effect(this.text, this.f++);
+			return '\u001B[' + this.lines + 'F\u001B[G\u001B[2K' + effect(this.text, this.f++);
 		},
 		replace(str) {
 			this.text = str;
