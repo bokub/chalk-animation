@@ -149,7 +149,9 @@ function animateString(str, effect, delay, speed) {
 			return '\u001B[' + this.lines + 'F\u001B[G\u001B[2K' + this.text.map(str => effect(str, this.f)).join('\n');
 		},
 		replace(str) {
-			this.text = str;
+			this.text = str.split(/\r\n|\r|\n/);
+			this.lines = str.split(/\r\n|\r|\n/).length;
+			return this;
 		},
 		stop() {
 			this.stopped = true;

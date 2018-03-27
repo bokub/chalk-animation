@@ -11,4 +11,8 @@ for (const effect of effects) {
 	test(`doesn't throw (${effect})`, t => {
 		t.notThrows(() => a[effect]('Lorem ipsum dolor sit amet'));
 	});
+
+	test(`can pass string to replace (${effect})`, t => {
+		t.notThrows(() => a[effect]('Lorem ipsum dolor sit amet').replace('a new value').frame());
+	});
 }
