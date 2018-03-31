@@ -9,18 +9,25 @@ for (const effect of effects) {
 	});
 
 	test.cb(`animations are starting automatically (${effect})`, t => {
-		const an = a[effect]('Lorem ipsum\ndolor sit amet', effect === 'neon' ? 100 : 10);
+		const an = a[effect]('Lorem ipsum\ndolor sit amet');
+		const interval = setInterval(() => {
+			if (an.f > 2) {
+				clearInterval(interval);
+				t.pass();
+				t.end(); // Exit the test right when there is a result
+			}
+		}, 10);
 		setTimeout(() => {
-			t.true(an.f > 1);
+			t.true(an.f > 2);
 			t.end();
-		}, 20);
+		}, 1500);
 	});
 
 	test.cb(`console.log stops the animation (${effect})`, t => {
 		const an = a[effect]('Lorem ipsum\ndolor sit amet');
 		setTimeout(() => {
 			t.is(an.stopped, false);
-			console.log('Test log');
+			console.log('This log should stop the animation');
 			t.is(an.stopped, true);
 			t.end();
 		}, 20);
