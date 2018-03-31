@@ -1,7 +1,7 @@
 {
   "name": "chalk-animation",
   "description": "Colorful animations in terminal output",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "author": "Boris K",
   "bin": "./cli.js",
   "bugs": "https://github.com/bokub/chalk-animation/issues",
@@ -45,6 +45,6 @@
   "repository": "bokub/chalk-animation",
   "scripts": {
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "test": "xo && nyc ava"
+    "test": "xo && nyc ava --serial"
   }
 }
