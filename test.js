@@ -44,19 +44,6 @@ for (const effect of effects) {
 		t.is(an.f, 2);
 	});
 
-	test(`frames are always different (${effect})`, t => {
-		if (['pulse', 'glitch'].indexOf(effect) > -1) {
-			return t.pass(); // Ignore some animations
-		}
-		const an = a[effect]('Lorem ipsum\ndolor sit amet').stop();
-		let frame = '';
-		for (let i = 0; i < 10; i++) {
-			const lastFrame = frame;
-			frame = an.frame();
-			t.not(frame, lastFrame);
-		}
-	});
-
 	test(`text can be replaced (${effect})`, t => {
 		if (['radar'].indexOf(effect) > -1) {
 			return t.pass(); // Ignore some animations
@@ -90,8 +77,8 @@ for (const effect of effects) {
 
 	test(`test lots of frames (${effect})`, t => {
 		const an = a[effect]('Lorem ipsum\ndolor sit amet').stop();
-		for (let i = 0; i < 1000; i++) {
-			t.notThrows(() => an.render());
+		for (let i = 0; i < 5000; i++) {
+			t.notThrows(() => an.frame());
 		}
 	});
 }
