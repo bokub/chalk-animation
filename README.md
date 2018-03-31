@@ -2,9 +2,9 @@
 
 [![Build Status](https://img.shields.io/travis/bokub/chalk-animation.svg?branch=master&style=flat-square)](https://travis-ci.org/bokub/chalk-animation)
 [![npm](https://img.shields.io/npm/v/chalk-animation.svg?style=flat-square)](https://www.npmjs.com/package/chalk-animation)
+[![Codecov](https://img.shields.io/codecov/c/github/bokub/chalk-animation.svg?style=flat-square)](https://codecov.io/gh/bokub/chalk-animation)
+[![npm](https://img.shields.io/npm/dw/chalk-animation.svg?style=flat-square&colorB=fe7d37)](https://www.npmjs.com/package/chalk-animation)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg?style=flat-square)](https://github.com/sindresorhus/xo)
-[![npm](https://img.shields.io/npm/dm/chalk-animation.svg?style=flat-square)](https://www.npmjs.com/package/chalk-animation)
-[![Maintainability](https://api.codeclimate.com/v1/badges/0bd482faab1f6b4c94e8/maintainability)](https://codeclimate.com/github/bokub/chalk-animation/maintainability)
 
 > Colorful animations in terminal output
 
