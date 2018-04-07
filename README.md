@@ -14,10 +14,11 @@
 |   Name    |                   Preview                  |
 |:---------:|:------------------------------------------:|
 |  rainbow  | ![rainbow](http://i.imgur.com/napdxdn.gif) |
-|   pulse   | ![rainbow](http://i.imgur.com/xdaETwr.gif) |
-|   glitch  | ![rainbow](http://i.imgur.com/834FJU1.gif) |
-|   radar   | ![rainbow](http://i.imgur.com/3bFrtRc.gif) |
-|    neon   | ![rainbow](http://i.imgur.com/YdAAroI.gif) |
+|   pulse   | ![pulse](http://i.imgur.com/xdaETwr.gif)   |
+|   glitch  | ![glitch](http://i.imgur.com/834FJU1.gif)  |
+|   radar   | ![radar](http://i.imgur.com/3bFrtRc.gif)   |
+|    neon   | ![neon](http://i.imgur.com/YdAAroI.gif)    |
+|  karaoke  | ![karaoke](https://i.imgur.com/lG7EF1t.gif)|
 
 
 ## Install
@@ -127,6 +128,7 @@ $ chalk-animation --help
     glitch
     radar
     neon
+    karaoke
 
   Example
     $ chalk-animation rainbow Hello world!

@@ -114,6 +114,13 @@ const effects = {
 	neon(str, frame) {
 		const color = (frame % 2 === 0) ? chalk.dim.rgb(88, 80, 85) : chalk.bold.rgb(213, 70, 242);
 		return color(str);
+	},
+	karaoke(str, frame) {
+		const chars = (frame % (str.length + 20)) - 10;
+		if (chars < 0) {
+			return chalk.white(str);
+		}
+		return chalk.rgb(255, 187, 0).bold(str.substr(0, chars)) + chalk.white(str.substr(chars));
 	}
 };
 
@@ -182,5 +189,6 @@ module.exports = {
 	pulse: (str, speed) => animateString(str, effects.pulse, 16, speed),
 	glitch: (str, speed) => animateString(str, effects.glitch, 55, speed),
 	radar: (str, speed) => animateString(str, effects.radar, 50, speed),
-	neon: (str, speed) => animateString(str, effects.neon, 500, speed)
+	neon: (str, speed) => animateString(str, effects.neon, 500, speed),
+	karaoke: (str, speed) => animateString(str, effects.karaoke, 50, speed)
 };

@@ -1,7 +1,7 @@
 {
   "name": "chalk-animation",
   "description": "Colorful animations in terminal output",
-  "version": "1.5.2",
+  "version": "1.6.0",
   "author": "Boris K",
   "bin": "./cli.js",
   "bugs": "https://github.com/bokub/chalk-animation/issues",
