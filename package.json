@@ -6,18 +6,18 @@
   "bin": "./cli.js",
   "bugs": "https://github.com/bokub/chalk-animation/issues",
   "dependencies": {
-    "chalk": "^2.3.2",
-    "gradient-string": "^1.1.0",
-    "meow": "^4.0.0"
+    "chalk": "^5.0.1",
+    "gradient-string": "^2.0.0",
+    "meow": "^10.1.2"
   },
   "devDependencies": {
-    "ava": "^0.25.0",
-    "codecov": "^3.0.0",
-    "nyc": "^11.6.0",
-    "xo": "^0.20.3"
+    "ava": "^4.1.0",
+    "codecov": "^3.8.3",
+    "nyc": "^15.1.0",
+    "xo": "^0.48.0"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=12"
   },
   "homepage": "https://github.com/bokub/chalk-animation",
   "keywords": [
@@ -46,5 +46,6 @@
   "scripts": {
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "test": "xo && nyc ava --serial"
-  }
+  },
+  "type": "module"
 }

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-const meow = require('meow');
-const chalkAnim = require('.');
+import process from 'node:process';
+import meow from 'meow';
+import chalkAnim from './index.js';
 
 const names = Object.keys(chalkAnim);
 
@@ -28,7 +29,11 @@ const payload = cli.input.slice(1);
 const effect = chalkAnim[name];
 
 if (typeof effect === 'undefined') {
-	console.error(`error: unknown animation name: "${name}", must be one of: ${names.join(', ')}`);
+	console.error(
+		`error: unknown animation name: "${name}", must be one of: ${names.join(
+			', ',
+		)}`,
+	);
 	process.exit(1);
 }
 

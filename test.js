@@ -1,36 +1,58 @@
 import test from 'ava';
-import a from '.';
+import a from './index.js';
 
 const effects = Object.keys(a);
 
 for (const effect of effects) {
 	test(`throw error if invalid speed (${effect})`, t => {
-		t.throws(() => a[effect]('abc', ''), `Expected \`speed\` to be an number greater than 0`);
+		t.throws(() => a[effect]('abc', ''), {message: 'Expected `speed` to be an number greater than 0'});
 	});
 
-	test.cb(`animations are starting automatically (${effect})`, t => {
+	test(`animations are starting automatically (${effect})`, async t => {
 		const an = a[effect]('Lorem ipsum\ndolor sit amet');
-		const interval = setInterval(() => {
-			if (an.f > 2) {
-				clearInterval(interval);
-				t.pass();
-				t.end(); // Exit the test right when there is a result
-			}
-		}, 10);
-		setTimeout(() => {
-			t.true(an.f > 2);
-			t.end();
-		}, 1500);
+
+		await Promise.race([
+			new Promise((resolve, reject) => {
+				const interval = setInterval(() => {
+					if (an.f > 2) {
+						clearInterval(interval);
+						try {
+							t.pass();
+							// Exit the test right when there is a result
+							resolve();
+						} catch (error) {
+							reject(error);
+						}
+					}
+				}, 10);
+			}),
+		], new Promise((resolve, reject) => {
+			setTimeout(() => {
+				try {
+					t.true(an.f > 2);
+					resolve();
+				} catch (error) {
+					reject(error);
+				}
+			}, 1500);
+		}));
 	});
 
-	test.cb(`console.log stops the animation (${effect})`, t => {
+	test(`console.log stops the animation (${effect})`, async t => {
 		const an = a[effect]('Lorem ipsum\ndolor sit amet');
-		setTimeout(() => {
-			t.is(an.stopped, false);
-			console.log('This log should stop the animation');
-			t.is(an.stopped, true);
-			t.end();
-		}, 20);
+
+		await new Promise((resolve, reject) => {
+			setTimeout(() => {
+				try {
+					t.is(an.stopped, false);
+					console.log('This log should stop the animation');
+					t.is(an.stopped, true);
+					resolve();
+				} catch (error) {
+					reject(error);
+				}
+			}, 20);
+		});
 	});
 
 	test(`start and stop are working (${effect})`, t => {
@@ -52,7 +74,7 @@ for (const effect of effects) {
 	});
 
 	test(`text can be replaced (${effect})`, t => {
-		if (['radar'].indexOf(effect) > -1) {
+		if (['radar'].includes(effect)) {
 			return t.pass(); // Ignore some animations
 		}
 
@@ -61,11 +83,11 @@ for (const effect of effects) {
 		an.replace('Z Z Z');
 		const f2 = an.frame();
 
-		t.true(f1.indexOf('Y') > -1);
-		t.false(f1.indexOf('Z') > -1);
+		t.true(f1.includes('Y'));
+		t.false(f1.includes('Z'));
 
-		t.false(f2.indexOf('Y') > -1);
-		t.true(f2.indexOf('Z') > -1);
+		t.false(f2.includes('Y'));
+		t.true(f2.includes('Z'));
 	});
 
 	test(`multiline is well supported (${effect})`, t => {
@@ -75,11 +97,19 @@ for (const effect of effects) {
 		t.is(frame.split('\n').length, 5);
 	});
 
-	test.cb(`forced start is not a problem (${effect})`, t => {
-		t.notThrows(() => setTimeout(() => {
-			a[effect]('Lorem ipsum\ndolor sit amet', 10).start();
-			t.end();
-		}), 20);
+	test(`forced start is not a problem (${effect})`, async t => {
+		await t.notThrowsAsync(async () => {
+			await new Promise((resolve, reject) => {
+				setTimeout(() => {
+					try {
+						a[effect]('Lorem ipsum\ndolor sit amet', 10).start();
+						resolve();
+					} catch (error) {
+						reject(error);
+					}
+				}, 20);
+			});
+		});
 	});
 
 	test(`test lots of frames (${effect})`, t => {
