@@ -8,13 +8,13 @@
   "dependencies": {
     "chalk": "^2.3.2",
     "gradient-string": "^1.1.0",
-    "meow": "^4.0.0"
+    "meow": "^10.1.2"
   },
   "devDependencies": {
     "ava": "^0.25.0",
     "codecov": "^3.0.0",
-    "nyc": "^11.6.0",
-    "xo": "^0.20.3"
+    "nyc": "^15.1.0",
+    "xo": "^0.48.0"
   },
   "engines": {
     "node": ">=4"
@@ -46,5 +46,22 @@
   "scripts": {
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "test": "xo && nyc ava --serial"
+  },
+  "xo": {
+    "rules": {
+      "ava/assertion-arguments": 0,
+      "ava/no-unknown-modifiers": 0,
+      "comma-dangle": 0,
+      "node/prefer-global/process": 0,
+      "operator-linebreak": 0,
+      "padding-line-between-statements": 0,
+      "quotes": 0,
+      "unicorn/no-this-assignment": 0,
+      "unicorn/prefer-includes": 0,
+      "unicorn/prefer-module": 0,
+      "unicorn/prefer-number-properties": 0,
+      "unicorn/prefer-string-slice": 0,
+      "unicorn/prevent-abbreviations": 0
+    }
   }
 }
