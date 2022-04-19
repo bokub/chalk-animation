@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-const meow = require('meow');
-const chalkAnim = require('.');
+import process from 'node:process';
+import meow from 'meow';
+import chalkAnim from './index.js';
 
 const names = Object.keys(chalkAnim);
 
@@ -17,7 +18,9 @@ Available animations
 
 Example
   $ chalk-animation rainbow Hello world!
-`);
+`, {
+	importMeta: import.meta
+});
 
 if (cli.input.length < 2) {
 	cli.showHelp(2);

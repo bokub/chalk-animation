@@ -1,7 +1,5 @@
-'use strict';
-
-const chalk = require('chalk');
-const gradient = require('gradient-string');
+import chalk from 'chalk';
+import gradient from 'gradient-string';
 
 const log = console.log;
 let currentAnimation = null;
@@ -184,7 +182,7 @@ function stopLastAnimation() {
 	}
 }
 
-module.exports = {
+const chalkAnimation = {
 	rainbow: (str, speed) => animateString(str, effects.rainbow, 15, speed),
 	pulse: (str, speed) => animateString(str, effects.pulse, 16, speed),
 	glitch: (str, speed) => animateString(str, effects.glitch, 55, speed),
@@ -192,3 +190,5 @@ module.exports = {
 	neon: (str, speed) => animateString(str, effects.neon, 500, speed),
 	karaoke: (str, speed) => animateString(str, effects.karaoke, 50, speed)
 };
+
+export default chalkAnimation;

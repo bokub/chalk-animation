@@ -1,25 +1,34 @@
 {
   "name": "chalk-animation",
   "description": "Colorful animations in terminal output",
-  "version": "1.6.0",
+  "version": "2.0.0",
+  "license": "MIT",
   "author": "Boris K",
   "bin": "./cli.js",
-  "bugs": "https://github.com/bokub/chalk-animation/issues",
+  "main": "index.js",
+  "scripts": {
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "fix": "xo --fix",
+    "test": "xo && nyc ava --serial"
+  },
   "dependencies": {
-    "chalk": "^2.3.2",
-    "gradient-string": "^1.1.0",
+    "chalk": "^4.1.2",
+    "gradient-string": "^2.0.1",
     "meow": "^10.1.2"
   },
   "devDependencies": {
-    "ava": "^0.25.0",
-    "codecov": "^3.0.0",
+    "ava": "^4.2.0",
+    "codecov": "^3.8.3",
     "nyc": "^15.1.0",
     "xo": "^0.48.0"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=12"
   },
+  "type": "module",
   "homepage": "https://github.com/bokub/chalk-animation",
+  "bugs": "https://github.com/bokub/chalk-animation/issues",
+  "repository": "bokub/chalk-animation",
   "keywords": [
     "animation",
     "chalk",
@@ -40,28 +49,23 @@
     "styles",
     "terminal"
   ],
-  "license": "MIT",
-  "main": "index.js",
-  "repository": "bokub/chalk-animation",
-  "scripts": {
-    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "test": "xo && nyc ava --serial"
-  },
   "xo": {
     "rules": {
-      "ava/assertion-arguments": 0,
-      "ava/no-unknown-modifiers": 0,
-      "comma-dangle": 0,
-      "node/prefer-global/process": 0,
-      "operator-linebreak": 0,
-      "padding-line-between-statements": 0,
-      "quotes": 0,
-      "unicorn/no-this-assignment": 0,
-      "unicorn/prefer-includes": 0,
-      "unicorn/prefer-module": 0,
-      "unicorn/prefer-number-properties": 0,
-      "unicorn/prefer-string-slice": 0,
-      "unicorn/prevent-abbreviations": 0
+      "ava/assertion-arguments": "off",
+      "ava/no-unknown-modifiers": "off",
+      "comma-dangle": "off",
+      "node/prefer-global/process": "off",
+      "operator-linebreak": "off",
+      "prefer-destructuring": "off",
+      "prefer-rest-params": "off",
+      "padding-line-between-statements": "off",
+      "quotes": "off",
+      "unicorn/no-this-assignment": "off",
+      "unicorn/prefer-includes": "off",
+      "unicorn/prefer-module": "off",
+      "unicorn/prefer-number-properties": "off",
+      "unicorn/prefer-string-slice": "off",
+      "unicorn/prevent-abbreviations": "off"
     }
   }
 }
