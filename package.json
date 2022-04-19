@@ -7,9 +7,9 @@
   "bin": "./cli.js",
   "main": "index.js",
   "scripts": {
-    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "coverage": "c8 report --reporter=text-lcov > coverage.lcov && codecov",
     "fix": "xo --fix",
-    "test": "xo && nyc ava --serial"
+    "test": "xo && c8 ava --serial"
   },
   "dependencies": {
     "chalk": "^4.1.2",
@@ -18,8 +18,8 @@
   },
   "devDependencies": {
     "ava": "^4.2.0",
+    "c8": "^7.11.0",
     "codecov": "^3.8.3",
-    "nyc": "^15.1.0",
     "xo": "^0.48.0"
   },
   "engines": {
@@ -51,18 +51,13 @@
   ],
   "xo": {
     "rules": {
-      "ava/assertion-arguments": "off",
-      "ava/no-unknown-modifiers": "off",
       "comma-dangle": "off",
-      "node/prefer-global/process": "off",
       "operator-linebreak": "off",
       "prefer-destructuring": "off",
       "prefer-rest-params": "off",
       "padding-line-between-statements": "off",
-      "quotes": "off",
       "unicorn/no-this-assignment": "off",
       "unicorn/prefer-includes": "off",
-      "unicorn/prefer-module": "off",
       "unicorn/prefer-number-properties": "off",
       "unicorn/prefer-string-slice": "off",
       "unicorn/prevent-abbreviations": "off"

@@ -1,6 +1,6 @@
 # chalk-animation
 
-[![Build Status](https://flat.badgen.net/github/status/bokub/chalk-animation)](https://github.com/bokub/chalk-animation/actions/workflows/run.yml)
+[![Build Status](https://flat.badgen.net/github/checks/bokub/chalk-animation?label=tests)](https://github.com/bokub/chalk-animation/actions/workflows/run.yml)
 [![Version](https://runkit.io/bokub/npm-version/branches/master/chalk-animation?style=flat)](https://www.npmjs.com/package/chalk-animation)
 [![Codecov](https://flat.badgen.net/codecov/c/github/bokub/chalk-animation)](https://codecov.io/gh/bokub/chalk-animation)
 [![Downloads](https://flat.badgen.net/npm/dm/chalk-animation?color=FF9800)](https://www.npmjs.com/package/chalk-animation)

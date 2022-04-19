@@ -127,7 +127,7 @@ function animateString(str, effect, delay, speed) {
 
 	speed = speed === undefined ? 1 : parseFloat(speed);
 	if (!speed || speed <= 0) {
-		throw new Error(`Expected \`speed\` to be an number greater than 0`);
+		throw new Error('Expected `speed` to be an number greater than 0');
 	}
 
 	currentAnimation = {
