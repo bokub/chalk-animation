@@ -1,13 +1,14 @@
 {
   "name": "chalk-animation",
   "description": "Colorful animations in terminal output",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "license": "MIT",
   "author": "Boris K",
   "bin": "./cli.js",
   "main": "index.js",
+  "files": ["cli.js", "index.js"],
   "scripts": {
-    "coverage": "c8 report --reporter=text-lcov > coverage.lcov && codecov",
+    "coverage": "c8 report --reporter=text-lcov > coverage.lcov",
     "fix": "xo --fix",
     "test": "xo && c8 ava --serial"
   },
@@ -19,7 +20,6 @@
   "devDependencies": {
     "ava": "^4.2.0",
     "c8": "^7.11.0",
-    "codecov": "^3.8.3",
     "xo": "^0.48.0"
   },
   "engines": {
