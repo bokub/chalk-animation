@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 import gradient from 'gradient-string';
 
-const log = console.log;
+const log = process.stdout.write.bind(process.stdout);;
 let currentAnimation = null;
 
 const consoleFunctions = {
@@ -151,7 +151,7 @@ function animateString(str, effect, delay, speed) {
 		},
 		frame() {
 			this.f++;
-			return '\u001B[' + this.lines + 'F\u001B[G\u001B[2K' + this.text.map(str => effect(str, this.f)).join('\n');
+			return effect(str, this.f) + '\r';
 		},
 		replace(str) {
 			this.text = str.split(/\r\n|\r|\n/);
