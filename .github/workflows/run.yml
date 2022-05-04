@@ -1,4 +1,4 @@
-name: chalk-animation CI
+name: CI/CD
 
 on:
   - push
@@ -7,30 +7,37 @@ on:
 
 jobs:
   lint:
+    name: Lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '12'
+          node-version: 16
       - run: npm ci
-      - run: npx xo
+      - run: npm run lint
 
   test:
+    name: Test (Node v${{ matrix.node }})
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ 12, 16 ]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '12'
+          node-version: ${{ matrix.node }}
       - run: npm ci
-      - run: npx c8 ava --serial
+      - run: npm test
       - run: npm run coverage
       - uses: codecov/codecov-action@v3
+        if: matrix.node == 16
         with:
           files: ./coverage.lcov
 
   publish:
+    name: Publish on npm
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/')
     needs:
@@ -40,7 +47,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '12'
+          node-version: 16
       - run: npm ci
       - name: Publish on npm
         uses: JS-DevTools/npm-publish@v1

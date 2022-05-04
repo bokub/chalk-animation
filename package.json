@@ -9,8 +9,10 @@
   "files": ["cli.js", "index.js"],
   "scripts": {
     "coverage": "c8 report --reporter=text-lcov > coverage.lcov",
+    "lint": "xo",
     "fix": "xo --fix",
-    "test": "xo && c8 ava --serial"
+    "test": "c8 ava --serial",
+    "prepare": "husky install"
   },
   "dependencies": {
     "chalk": "^4.1.2",
@@ -20,7 +22,8 @@
   "devDependencies": {
     "ava": "^4.2.0",
     "c8": "^7.11.0",
-    "xo": "^0.48.0"
+    "xo": "^0.48.0",
+    "husky": "^7.0.4"
   },
   "engines": {
     "node": ">=12"
