@@ -18,7 +18,7 @@
   "dependencies": {
     "chalk": "^5.1.2",
     "gradient-string": "^2.0.2",
-    "meow": "^11.0.0"
+    "meow": "^10.1.5"
   },
   "devDependencies": {
     "ava": "^4.3.3",
