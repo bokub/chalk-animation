@@ -1,37 +1,7 @@
 {
   "name": "chalk-animation",
-  "description": "Colorful animations in terminal output",
   "version": "2.0.3",
-  "license": "MIT",
-  "author": "Boris K",
-  "bin": "./cli.js",
-  "main": "index.js",
-  "files": ["cli.js", "index.js"],
-  "scripts": {
-    "coverage": "c8 report --reporter=text-lcov > coverage.lcov",
-    "lint": "xo",
-    "fix": "xo --fix",
-    "test": "c8 ava --serial",
-    "prepare": "husky install"
-  },
-  "dependencies": {
-    "chalk": "^4.1.2",
-    "gradient-string": "^2.0.2",
-    "meow": "^10.1.2"
-  },
-  "devDependencies": {
-    "ava": "^4.2.0",
-    "c8": "^7.11.0",
-    "xo": "^0.48.0",
-    "husky": "^7.0.4"
-  },
-  "engines": {
-    "node": ">=12"
-  },
-  "type": "module",
-  "homepage": "https://github.com/bokub/chalk-animation",
-  "bugs": "https://github.com/bokub/chalk-animation/issues",
-  "repository": "bokub/chalk-animation",
+  "description": "Colorful animations in terminal output",
   "keywords": [
     "animation",
     "chalk",
@@ -52,6 +22,27 @@
     "styles",
     "terminal"
   ],
+  "homepage": "https://github.com/bokub/chalk-animation",
+  "bugs": "https://github.com/bokub/chalk-animation/issues",
+  "repository": "bokub/chalk-animation",
+  "license": "MIT",
+  "author": "Boris K",
+  "type": "module",
+  "main": "index.js",
+  "bin": "./cli.js",
+  "files": [
+    "cli.js",
+    "index.js"
+  ],
+  "scripts": {
+    "audit": "npx upgradeps -v",
+    "coverage": "c8 report --reporter=text-lcov > coverage.lcov",
+    "fix": "xo --fix",
+    "lint": "xo",
+    "prepare": "husky install",
+    "sort": "npx sort-package-json",
+    "test": "c8 ava --serial"
+  },
   "xo": {
     "rules": {
       "comma-dangle": "off",
@@ -65,5 +56,19 @@
       "unicorn/prefer-string-slice": "off",
       "unicorn/prevent-abbreviations": "off"
     }
+  },
+  "dependencies": {
+    "chalk": "^5.1.2",
+    "gradient-string": "^2.0.2",
+    "meow": "^11.0.0"
+  },
+  "devDependencies": {
+    "ava": "^5.0.1",
+    "c8": "^7.12.0",
+    "husky": "^8.0.2",
+    "xo": "^0.52.4"
+  },
+  "engines": {
+    "node": ">=12"
   }
 }
