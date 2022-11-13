@@ -1,7 +1,7 @@
 {
   "name": "chalk-animation",
   "description": "Colorful animations in terminal output",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "license": "MIT",
   "author": "Boris K",
   "bin": "./cli.js",
@@ -13,19 +13,18 @@
     "fix": "xo --fix",
     "lint": "xo",
     "prepare": "husky install",
-    "sort": "npx sort-package-json",
     "test": "c8 ava --serial"
   },
   "dependencies": {
-    "chalk": "^4.1.2",
+    "chalk": "^5.1.2",
     "gradient-string": "^2.0.2",
-    "meow": "^10.1.2"
+    "meow": "^11.0.0"
   },
   "devDependencies": {
-    "ava": "^4.2.0",
-    "c8": "^7.11.0",
-    "xo": "^0.48.0",
-    "husky": "^7.0.4"
+    "ava": "^5.0.1",
+    "c8": "^7.12.0",
+    "xo": "^0.52.4",
+    "husky": "^8.0.2"
   },
   "engines": {
     "node": ">=12"
